@@ -1,4 +1,5 @@
-== README
+#README
 
-Chris's Blog Porfolio
+Chris Billigham's Portfolio
+
 
