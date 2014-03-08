@@ -1,7 +1,6 @@
 deploy:
   provider: heroku
   api_key: 3136b313-209e-4c91-a213-4e72fcd6bb06
-    secure: KshZcqwIH5vXzlKQeSq/QKdx9jImAdTEFd78jqF3wI2tGuV9m179cWKX6gPnAt40TZw74zMvPQDnCYGRWyoK4DcM/doHXS4X34VwI2LeIHrdpS1An7OfhV+NGo/u/NH9KuGOaL0sU+wRrF02HmZgXHDIiFX9cuRf14PpAqcIWPE=
   app: billinghamportfolio
   on:
     repo: caderache2014/Portfolio
