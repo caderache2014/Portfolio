@@ -3,6 +3,6 @@ require "test_helper"
 feature "land on home page" do
 	scenario "contains info" do
 		visit root_path
-		assert page.has_content?("Chris's")
+		assert page.has_content?("Blog")
 	end
 end
