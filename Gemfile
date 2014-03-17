@@ -10,6 +10,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'foundation-rails', '~> 5.0.3'
 gem 'minitest-rails'
+gem 'devise'
 
 group :doc do 
   gem 'sdoc', require: false

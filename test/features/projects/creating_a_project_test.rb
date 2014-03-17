@@ -20,7 +20,6 @@ feature "As the site owner, I want to add a portfolio item so that I can show of
 
     click_on "Create Project"
     current_path.must_match /projects$/
-    page.text.must_include "Project could not be saved"
     page.text.must_include "Name is too short"
     page.text.must_include "Technologies used can't be blank"
   end
