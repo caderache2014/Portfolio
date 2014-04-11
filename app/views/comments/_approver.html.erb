@@ -1,0 +1,6 @@
+<%= form_for [@commentable, comment] do |f| %>
+  <% if policy(comment).approver? && !comment.approved? %>
+  <%= f.hidden_field :approved, value: true %>
+  <%= f.submit "Approve" %>
+  <% end %>
+<% end %>

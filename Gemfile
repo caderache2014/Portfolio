@@ -11,7 +11,12 @@ gem 'jbuilder', '~> 1.2'
 gem 'foundation-rails', '~> 5.0.3'
 gem 'minitest-rails'
 gem 'devise'
-
+gem 'pundit'
+gem 'paperclip-dropbox', ">= 1.1.7"
+gem "paperclip"
+gem "nested_form"
+gem 'omniauth-twitter'
+gem 'figaro'
 group :doc do 
   gem 'sdoc', require: false
 end

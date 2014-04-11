@@ -11,7 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140316235537) do
+ActiveRecord::Schema.define(version: 20140410222550) do
+
+  create_table "comments", force: true do |t|
+    t.string   "author"
+    t.string   "author_url"
+    t.string   "author_email"
+    t.string   "user_ip"
+    t.string   "user_agent"
+    t.string   "referrer"
+    t.text     "context"
+    t.boolean  "approved"
+    t.integer  "post_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "comments", ["post_id"], name: "index_comments_on_post_id"
 
   create_table "posts", force: true do |t|
     t.string   "title"
@@ -19,6 +35,7 @@ ActiveRecord::Schema.define(version: 20140316235537) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "author_id"
+    t.boolean  "published"
   end
 
   create_table "projects", force: true do |t|
@@ -41,6 +58,7 @@ ActiveRecord::Schema.define(version: 20140316235537) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "role"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

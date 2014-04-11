@@ -10,6 +10,10 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
+    @post = Post.find(params[:id])
+    @commentable = @post
+    @comments = @commentable.comments
+    @comment = Comment.new
   end
 
   # GET /posts/new
@@ -17,8 +21,15 @@ class PostsController < ApplicationController
     @post = Post.new
   end
 
+  def publish
+    @post = Post.find(param[:id])
+    @post.published = true
+    @post.save
+    redirect_to_posts_url, notice: 'Published!'
+  end
   # GET /posts/1/edit
   def edit
+    @post = Post.find(params[:id])
   end
 
   # POST /posts
@@ -42,7 +53,7 @@ class PostsController < ApplicationController
   def update
     respond_to do |format|
       if @post.update(post_params)
-        current_user.posts << @post unless @post.author != nil
+        #current_user.posts << @post unless @post.author != nil
         format.html { redirect_to @post, notice: 'Post was successfully updated.' }
         format.json { head :no_content }
       else
@@ -55,6 +66,8 @@ class PostsController < ApplicationController
   # DELETE /posts/1
   # DELETE /posts/1.json
   def destroy
+    @post = Post.find(params[:id])
+    authorize @post 
     @post.destroy
     respond_to do |format|
       format.html { redirect_to posts_url }
@@ -62,14 +75,21 @@ class PostsController < ApplicationController
     end
   end
 
+  def publish
+    @post = Post.find(params[:id])
+    authorize @post, :update?
+    @post.publish!
+    redirect_to @post
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_post
-      @post = Post.find(params[:id])
+      @resource, id = request.path.split('/')[2,3]
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :body)
+      params.require(:post).permit(:title, :body, :locale, (:published if PostPolicy.new(current_user, @post).publish?))
     end
 end

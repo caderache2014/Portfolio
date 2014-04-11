@@ -15,5 +15,11 @@
   <%= @post.author.email %>
 </p>
 
+<p id="status">
+  <b>Status:</b>
+  <%= @post.published? ? "Published" : "Unpublished" %>
+</p>
+<%= render "comments/comments_form" %>
+<%= render "comments/table" %>
 <%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %>
