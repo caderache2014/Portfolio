@@ -1,0 +1,24 @@
+<% @comments.each do |comment| %>
+    <% if comment.approved || policy(comment).approver? %>
+      <tr> id="<%= dom_id(comment) %>">
+        <td><%= comment.context %></td>
+        <% if policy(comment).update? %>
+          <td><%= link_to 'Edit', polymorphic_path([@commentable, comment]) %></td>
+        <% end %>
+        <% if policy(comment).destroy? %>
+          <td><%= link_to 'Destroy', polymorphic_path([@commentable, comment]),
+                method: :delete, data: { confirm: "Are you sure?"} %></td>
+        <% end %>
+        <td>
+          <%= render partial: "comments/approver", locals: {comment: comment} %>
+        </td>
+      </tr>
+      <% end %>
+    <% end %>
+
+
+projects/show
+    <p id="status">
+  <b>Status:</b>
+  <!-- <%= @project.published? #? "Published" : "Unpublished" %> -->
+</p>

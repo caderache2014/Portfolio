@@ -9,7 +9,6 @@ class CreateComments < ActiveRecord::Migration
       t.string :referrer
       t.text :context
       t.boolean :approved
-      t.references :post, index: true
 
       t.timestamps
     end

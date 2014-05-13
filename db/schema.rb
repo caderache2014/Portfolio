@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140410222550) do
+ActiveRecord::Schema.define(version: 20140507180353) do
 
   create_table "comments", force: true do |t|
     t.string   "author"
@@ -22,12 +22,14 @@ ActiveRecord::Schema.define(version: 20140410222550) do
     t.string   "referrer"
     t.text     "context"
     t.boolean  "approved"
-    t.integer  "post_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "commentable_id"
+    t.string   "commentable_type"
+    t.integer  "authorid"
   end
 
-  add_index "comments", ["post_id"], name: "index_comments_on_post_id"
+  add_index "comments", ["commentable_id", "commentable_type"], name: "index_comments_on_commentable_id_and_commentable_type"
 
   create_table "posts", force: true do |t|
     t.string   "title"
@@ -36,6 +38,7 @@ ActiveRecord::Schema.define(version: 20140410222550) do
     t.datetime "updated_at"
     t.integer  "author_id"
     t.boolean  "published"
+    t.string   "image"
   end
 
   create_table "projects", force: true do |t|
@@ -43,6 +46,7 @@ ActiveRecord::Schema.define(version: 20140410222550) do
     t.string   "technologies_used"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "author_id"
   end
 
   create_table "users", force: true do |t|
@@ -59,6 +63,10 @@ ActiveRecord::Schema.define(version: 20140410222550) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "role"
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "users"
+    t.string   "name"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

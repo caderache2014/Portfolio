@@ -1,3 +1,33 @@
 <h2><%= @project.name %></h2>
 <p>Technologies used: <%= @project.technologies_used %>
 <%= link_to 'Destroy', @project, method: :delete, data: {confirm: 'Are you sure?'} %>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <%= image_tag @project.image_url(:thumb).to_s %>
+</p>
+
+<p>
+	<strong>BY: </strong>
+	<%= @project.author.name %>
+</p>
+<p>
+  <strong>Title:</strong>
+  <%= @project.name %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @project.technologies_used %>
+</p>
+
+<p id="author">
+  <b>By:</b>
+  <%= @project.author.email %>
+</p>
+
+
+<%= render "comments/comments_form" %>
+<%= render "comments/table" %>
+<%= link_to 'Edit', edit_project_path(@project) %> |
+<%= link_to 'Back', projects_path %>

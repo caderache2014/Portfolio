@@ -1,6 +1,14 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <%= image_tag @post.image_url(:thumb).to_s %>
+</p>
+
+<p>
+	<strong>BY: </strong>
+	<%= @post.author.name %>
+</p>
+<p>
   <strong>Title:</strong>
   <%= @post.title %>
 </p>

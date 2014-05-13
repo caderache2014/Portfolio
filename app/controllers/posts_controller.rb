@@ -25,7 +25,7 @@ class PostsController < ApplicationController
     @post = Post.find(param[:id])
     @post.published = true
     @post.save
-    redirect_to_posts_url, notice: 'Published!'
+    redirect_to posts_url, notice: 'Published!'
   end
   # GET /posts/1/edit
   def edit
@@ -36,9 +36,10 @@ class PostsController < ApplicationController
   # POST /posts.json
   def create
     @post = Post.new(post_params)
+    @post.author = current_user
     respond_to do |format|
       if @post.save
-        current_user.posts << @post
+        #current_user.posts << @post
         format.html { redirect_to @post, notice: 'Post was successfully created.' }
         format.json { render action: 'show', status: :created, location: @post }
       else
@@ -90,6 +91,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :body, :locale, (:published if PostPolicy.new(current_user, @post).publish?))
+      params.require(:post).permit(:title, :body, :locale, :image, (:published if PostPolicy.new(current_user, @post).publish?))
     end
 end

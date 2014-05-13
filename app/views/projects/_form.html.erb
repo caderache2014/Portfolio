@@ -10,16 +10,23 @@
     </ul>
   </div>
   <% end %>
-
-  <div class="field">
+  <div class="row">
+    <div class="large-12 columns">
+      <%= f.label :image%>
+      <%= f.file_field :image %>
+    </div>
+    <div class="large-12 columns">
     <%= f.label :name %><br/>
     <%= f.text_field :name %>
-  </div>
-  <div class="field">
+    </div>
+    <div class="large-12 columns">
     <%= f.label :technologies_used %><br/>
     <%= f.text_area :technologies_used %>
   </div>
-  <div class="actions">
+  <div class="large-12 columns">
     <%= f.submit %>
   </div>
+
+  
+</div>
   <% end %>

@@ -1,6 +1,8 @@
 class ProjectsController < ApplicationController
   before_action :set_project, only: [:show, :edit, :update, :destroy]
   skip_before_action :verfiy_authenticity_token, only: [:update]
+  before_action :authenticate_user!, except: [:index, :show]
+
   def index
     @projects = Project.all
   end
@@ -11,6 +13,7 @@ class ProjectsController < ApplicationController
 
   def create
     @project = Project.new(project_params)
+    @project.author = current_user
     respond_to do |format|
       format.html do
         if @project.save

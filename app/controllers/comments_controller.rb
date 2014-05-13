@@ -13,11 +13,13 @@ class CommentsController < ApplicationController
   end
   def create
     @comment = @commentable.comments.new(comment_params)
+    @comment.author = current_user
     if @comment.save
       redirect_to @commentable, notice: "Successfully saved comment"
     else
-      instance_variable_set("@#{@resource.singularize}".to_sym, @commentable)
-      render template: "#{@resource}/show"
+      render :new
+      #instance_variable_set("@#{@resource.singularize}".to_sym, @commentable)
+      #render template: "#{@resource}/show"
     end
   end
   def update
@@ -63,12 +65,14 @@ class CommentsController < ApplicationController
   end
 
   def comment_params
-    params.require(:comment).permit(:context, (:approved if CommentPolicy.new(current_user, @comment).approver?), :created_at, :updated_at, :locale, :commentable_id, :author)
+    params.require(:comment).permit(:context, :approved, :created_at, :updated_at, :commentable_id, :commentable_type, :author)
+  #if CommentPolicy.new(current_user, @comment).approver?)
   end
 
   def load_commentable
-    @resource, id = request.path.split('/')[1,2]
-    @commentable = @resource.singularize.classify.constantize.find(id)
-
+   # @resource, id = request.path.split('/')[1,2]
+   # @commentable = @resource.singularize.classify.constantize.find(id)
+   klass = [Post, Project].detect { |c| params["#{c.name.underscore}_id"]}
+   @commentable = klass.find(params["#{klass.name.underscore}_id"])
   end
 end

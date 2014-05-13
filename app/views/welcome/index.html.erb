@@ -1,124 +1,371 @@
-  <!-- Nav Bar -->
- 
-  <div class="row">
-    <div class="large-12 columns">
-      <div class="nav-bar right">
-       <ul class="button-group">
-         <li><a href="#" class="button">Link 1</a></li>
-         <li><a href="#" class="button">Link 2</a></li>
-         <li><a href="#" class="button">Link 3</a></li>
-         <li><a href="#" class="button">Link 4</a></li>
-        </ul>
-      </div>
-      <h1>Blog <small>This is my blog. It's awesome.</small></h1>
-      <hr />
-    </div>
-  </div>
- 
-  <!-- End Nav -->
- 
- 
-  <!-- Main Page Content and Sidebar -->
- 
-  <div class="row">
- 
-    <!-- Main Blog Content -->
-    <div class="large-9 columns" role="content">
- 
-      <article>
- 
-        <h3><a href="#">Blog Post Title</a></h3>
-        <h6>Written by <a href="#">John Smith</a> on August 12, 2012.</h6>
- 
-        <div class="row">
-          <div class="large-6 columns">
-            <p>Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit, dolore aliqua non est magna in labore pig pork biltong. Eiusmod swine spare ribs reprehenderit culpa.</p>
-            <p>Boudin aliqua adipisicing rump corned beef. Nulla corned beef sunt ball tip, qui bresaola enim jowl. Capicola short ribs minim salami nulla nostrud pastrami.</p>
-          </div>
-          <div class="large-6 columns">
-            <img src="http://placehold.it/400x240&text=[img]" />
-          </div>
-        </div>
- 
-        <p>Pork drumstick turkey fugiat. Tri-tip elit turducken pork chop in. Swine short ribs meatball irure bacon nulla pork belly cupidatat meatloaf cow. Nulla corned beef sunt ball tip, qui bresaola enim jowl. Capicola short ribs minim salami nulla nostrud pastrami. Nulla corned beef sunt ball tip, qui bresaola enim jowl. Capicola short ribs minim salami nulla nostrud pastrami.</p>
- 
-        <p>Pork drumstick turkey fugiat. Tri-tip elit turducken pork chop in. Swine short ribs meatball irure bacon nulla pork belly cupidatat meatloaf cow. Nulla corned beef sunt ball tip, qui bresaola enim jowl. Capicola short ribs minim salami nulla nostrud pastrami.</p>
- 
-      </article>
- 
-      <hr />
- 
-      <article>
- 
-        <h3><a href="#">Blog Post Title</a></h3>
-        <h6>Written by <a href="#">John Smith</a> on August 12, 2012.</h6>
- 
-        <div class="row">
-          <div class="large-6 columns">
-            <p>Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit, dolore aliqua non est magna in labore pig pork biltong. Eiusmod swine spare ribs reprehenderit culpa.</p>
-            <p>Boudin aliqua adipisicing rump corned beef. Nulla corned beef sunt ball tip, qui bresaola enim jowl. Capicola short ribs minim salami nulla nostrud pastrami.</p>
-          </div>
-          <div class="large-6 columns">
-            <img src="http://placehold.it/400x240&text=[img]" />
-          </div>
-        </div>
- 
-        <p>Pork drumstick turkey fugiat. Tri-tip elit turducken pork chop in. Swine short ribs meatball irure bacon nulla pork belly cupidatat meatloaf cow. Nulla corned beef sunt ball tip, qui bresaola enim jowl. Capicola short ribs minim salami nulla nostrud pastrami. Nulla corned beef sunt ball tip, qui bresaola enim jowl. Capicola short ribs minim salami nulla nostrud pastrami.</p>
- 
-        <p>Pork drumstick turkey fugiat. Tri-tip elit turducken pork chop in. Swine short ribs meatball irure bacon nulla pork belly cupidatat meatloaf cow. Nulla corned beef sunt ball tip, qui bresaola enim jowl. Capicola short ribs minim salami nulla nostrud pastrami.</p>
- 
-      </article>
- 
-    </div>
- 
-    <!-- End Main Content -->
- 
- 
-    <!-- Sidebar -->
- 
-    <aside class="large-3 columns">
- 
-      <h5>Categories</h5>
-      <ul class="side-nav">
-        <li><a href="#">News</a></li>
-        <li><a href="#">Code</a></li>
-        <li><a href="#">Design</a></li>
-        <li><a href="#">Fun</a></li>
-        <li><a href="#">Weasels</a></li>
-      </ul>
- 
-      <div class="panel">
-        <h5>Featured</h5>
-        <p>Pork drumstick turkey fugiat. Tri-tip elit turducken pork chop in. Swine short ribs meatball irure bacon nulla pork belly cupidatat meatloaf cow.</p>
-        <a href="#">Read More →</a>
-      </div>
- 
-    </aside>
- 
-    <!-- End Sidebar -->
-  </div>
- 
-  <!-- End Main Content and Sidebar -->
- 
- 
-  <!-- Footer -->
- 
-  <footer class="row">
-    <div class="large-12 columns">
-      <hr />
+   <!-- INTRO -->
+  <section class="intro">
+    <div class="row">
+      <div class="medium-12 columns">
+
+        <h1>Web Developer &amp; Designer</h1>
+
+        <p><a href="#contact" class="button small alert radius">Hit me up</a></p>
+
+        <%= image_tag ("headshot.png") %>
+        
+      </div><!-- /.medium-12 .columns -->
+    </div><!-- /.row -->    
+  </section><!-- /.intro -->
+  <!-- INTRO -->
+  <!-- PORTFOLIO -->
+  <section id="portfolio" class="portfolio-wrapper">
+    <div class="row">
+      <div class="medium-12 columns">
+        <h4>My Recent Projects</h4>
+        <div class="line"></div>
+        <div class="clearfix"></div>
+        <div class="portfolio-list">
+          <!-- Start: Portfolio grid -->
+          <div class="portfolio">
+            <div class="portfolio-cover">
+              <%= image_tag ("work-1.jpg") %>
+              <div class="label">
+                <div class="label-text">
+                  <h5><a href="#" data-reveal-id="Modal-Portfolio-1" class="text-title">Example Title</a></h5>
+                </div><!-- /.label-text -->
+                <div class="label-bg"></div>
+              </div><!-- /.label -->
+            </div><!-- /.portfolio-cover -->
+          </div><!-- /.portfolio -->
+          <div class="portfolio">
+            <div class="portfolio-cover">
+              <%= image_tag ("work-2.jpg") %>
+              <div class="label">
+                <div class="label-text">
+                  <h5><a href="#" data-reveal-id="Modal-Portfolio-1" class="text-title">Example Title</a></h5>
+                </div><!-- /.label-text -->
+                <div class="label-bg"></div>
+              </div><!-- /.label -->
+            </div><!-- /.portfolio-cover -->
+          </div><!-- /.portfolio -->
+          <div class="portfolio">
+            <div class="portfolio-cover">
+              <%= image_tag ("work-3.jpg") %>
+              <div class="label">
+                <div class="label-text">
+                  <h5><a href="#" data-reveal-id="Modal-Portfolio-1" class="text-title">Example Title</a></h5>
+                </div><!-- /.label-text -->
+                <div class="label-bg"></div>
+              </div><!-- /.label -->
+
+            </div><!-- /.portfolio-cover -->
+
+          </div><!-- /.portfolio -->
+
+          <div class="portfolio">
+
+            <div class="portfolio-cover">
+
+              <%= image_tag ("work-4.jpg") %>
+
+              <div class="label">
+                <div class="label-text">
+                  <h5><a href="#" data-reveal-id="Modal-Portfolio-1" class="text-title">Example Title</a></h5>
+                </div><!-- /.label-text -->
+                <div class="label-bg"></div>
+              </div><!-- /.label -->
+
+            </div><!-- /.portfolio-cover -->
+
+          </div><!-- /.portfolio -->
+
+
+
+          <div class="portfolio">
+
+            <div class="portfolio-cover">
+
+              <%= image_tag ("work-5.jpg") %>
+
+              <div class="label">
+                <div class="label-text">
+                  <h5><a href="#" data-reveal-id="Modal-Portfolio-1" class="text-title">Example Title</a></h5>
+                </div><!-- /.label-text -->
+                <div class="label-bg"></div>
+              </div><!-- /.label -->
+
+            </div><!-- /.portfolio-cover -->
+
+          </div><!-- /.portfolio -->
+
+          <div class="portfolio">
+
+            <div class="portfolio-cover">
+
+              <%= image_tag ("work-6.jpg") %>
+
+              <div class="label">
+                <div class="label-text">
+                  <h5><a href="#" data-reveal-id="Modal-Portfolio-1" class="text-title">Example Title</a></h5>
+                </div><!-- /.label-text -->
+                <div class="label-bg"></div>
+              </div><!-- /.label -->
+
+            </div><!-- /.portfolio-cover -->
+
+          </div><!-- /.portfolio -->
+
+          <div class="portfolio">
+
+            <div class="portfolio-cover">
+
+              <%= image_tag ("work-7.jpg") %>
+
+              <div class="label">
+                <div class="label-text">
+                  <h5><a href="#" data-reveal-id="Modal-Portfolio-1" class="text-title">Example Title</a></h5>
+                </div><!-- /.label-text -->
+                <div class="label-bg"></div>
+              </div><!-- /.label -->
+
+            </div><!-- /.portfolio-cover -->
+
+          </div><!-- /.portfolio -->
+
+          <div class="portfolio">
+
+            <div class="portfolio-cover">
+
+              <%= image_tag ("work-8.jpg") %>
+
+              <div class="label">
+                <div class="label-text">
+                  <h5><a href="#" data-reveal-id="Modal-Portfolio-1" class="text-title">Example Title</a></h5>
+                </div><!-- /.label-text -->
+                <div class="label-bg"></div>
+              </div><!-- /.label -->
+
+            </div><!-- /.portfolio-cover -->
+
+          </div><!-- /.portfolio -->
+          <!-- End: Portfolio grid -->
+                 
+        </div><!-- /.portfolio-list -->
+        
+      </div><!-- /.medium-12 .columns -->
+
+    </div><!-- /.row -->
+
+  </section><!-- /.portfolio-wrapper -->
+  <!-- PORTFOLIO -->
+
+
+
+
+  <!-- ABOUT -->
+  <section id="about" class="about-wrapper">
+
+    <div class="row">
+
+      <div class="medium-12 columns">
+
+        <h3>About Me</h3>
+
+        <div class="line"></div>
+        <div class="clearfix"></div>
+        
+      </div><!-- /.medium-12 .columns -->
+
+    </div><!-- /.row -->
+
+    <div class="col-progress">
+
       <div class="row">
-        <div class="large-6 columns">
-          <p>© Copyright no one at all. Go to town.</p>
-        </div>
-        <div class="large-6 columns">
-          <ul class="inline-list right">
-            <li><a href="#">Link 1</a></li>
-            <li><a href="#">Link 2</a></li>
-            <li><a href="#">Link 3</a></li>
-            <li><a href="#">Link 4</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </footer>
+
+        <div class="medium-4 columns">
+          
+          <h6>HTML5</h6>
+          <div class="progress success round">
+            <span class="meter" style="width: 85%"></span>
+          </div><!-- /.progress -->
+          
+          <h6>CSS3</h6>
+          <div class="progress success round">
+            <span class="meter" style="width: 80%"></span>
+          </div><!-- /.progress -->
+          
+          <h6>jQuery</h6>
+          <div class="progress round">
+            <span class="meter" style="width: 80%"></span>
+          </div><!-- /.progress -->
+          
+        </div><!-- /.medium-4 .columns -->
+
+        <div class="medium-4 columns text-center">
+          
+          <div class="col-desc">
+            <p>My name is Michael Elliott.<br>I am from Salt Lake City, Utah, currently in Seattle. I'm a full-stack web developer and designer. Some of my other hobbies include making music, electronics, rock climbing, snowboarding, and video games. I have a dog, a cat, and a girlfriend. They are the best.</p>
+
+            <img src="assets/avatar.jpg" alt="">
+          </div><!-- ./col-desc -->
+          
+        </div><!-- /.medium-4 .columns -->
+
+        <div class="medium-4 columns">
+
+          <h6>Ruby on Rails</h6>
+          <div class="progress medium-12 round">
+            <span class="meter" style="width: 90%"></span>
+          </div><!-- /.progress -->
+          
+          <h6>Linux/Unix</h6>
+          <div class="progress medium-12 alert round">
+            <span class="meter" style="width: 90%"></span>
+          </div><!-- /.progress -->
+          
+          <h6>Git &amp; CLI</h6>
+          <div class="progress medium-12 alert round">
+            <span class="meter" style="width: 85%"></span>
+          </div><!-- /.progress -->
+          
+        </div><!-- /.medium-4 .columns -->
+
+      </div><!-- /.row -->
+      
+    </div><!-- /.col-progress -->
+
+  </section><!-- /.about-wrapper -->
+  <!-- ABOUT -->
+
+
+
+
+  <!-- LATEST TWEETS -->
+  <section class="blog-wrapper">
+
+    <div class="row">
+
+      <div class="medium-12 columns">
+        
+      </div><!-- /.medium-12 .columns -->
+
+    </div><!-- /.row -->
+
+  </section><!-- /.tweets-wrapper -->
+  <!-- LATEST TWEETS -->
+
+
+
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact-wrapper">
+
+    <div class="row">
+
+      <div class="medium-12 columns">
+
+        <h3>Let's Talk</h3>
+
+        <div class="line"></div>
+        <div class="clearfix"></div>
+        
+      </div><!-- /.medium-12 .columns -->
+
+    </div><!-- /.row -->
+
+    <div class="row">
+
+      <div class="medium-3 columns">&nbsp;</div><!-- /.medium-3 .columns -->
+      <div class="medium-6 columns">
+
+        <form class="contact-form">
+          
+          <div class="input-item">
+            <label>Name <span class="required">*</span></label>
+            <input type="text" placeholder="Full name">
+          </div><!-- /.input-item -->
+          
+          <div class="input-item">
+            <label>Email <span class="required">*</span></label>
+            <input type="email" placeholder="Email address">
+          </div><!-- /.input-item -->
+          
+          <div class="input-item">
+            <label>Messages <span class="required">*</span></label>
+            <textarea cols="10" rows="4" placeholder="Your message"></textarea>
+          </div><!-- /.input-item -->
+
+          <div class="input-item text-center">
+            <input class="button small success radius" type="submit" value="Submit">
+          </div><!-- /.input-item -->
+
+        </form><!-- /.contact-form -->
+        
+      </div><!-- /.medium-6 .columns -->
+      <div class="medium-3 columns">&nbsp;</div><!-- /.medium-3 .columns -->
+
+    </div><!-- /.row -->
+
+    <div class="clearfix"></div>
+    <div class="row margin-top">
+
+      <div class="medium-12 columns">
+
+        <h3>Stay In Touch!</h3>
+
+        <div class="line"></div>
+        <div class="clearfix"></div>
+
+        <ul class="social-icon">
+          <!--<li><a href="" class="google-plus"><i class="fa fa-google-plus"></i></a></li> -->
+          <li><a href="http://www.twitter.com/elliotecweb" class="twitter"><i class="fa fa-twitter"></i></a></li>
+          <li><a href="http://www.github.com/elliotec" class="github"><i class="fa fa-github"></i></a></li>
+          <li><a href="http://www.linkedin.com/in/elliotec" class="linkedin"><i class="fa fa-linkedin"></i></a></li>
+
+        </ul><!-- /.social-icon -->
+        
+      </div><!-- /.medium-12 .columns -->
+
+    </div><!-- /.row -->
     
+  </section><!-- /.contact-wrapper -->
+  <!-- CONTACT -->
+
+
+
+
+  <!-- FOOTER -->
+  <footer class="copy">
+
+    <div class="row">
+
+      <div class="medium-12 columns">
+
+        <p>&copy; Copyright 2013 <a href="./index.html">Michael Elliott</a>. All right reserved.</p>
+        
+      </div><!-- /.medium-12 .columns -->
+
+    </div><!-- /.row -->
+
+  </footer><!-- /.copy -->
+  <!-- FOOTER -->
+
+
+
+
+  <!-- Start show Modal for Portfolio from here. You should create a modal for each of your projects. -->
+  <!-- Start: Modal Portfolio 1 -->
+  <div id="Modal-Portfolio-1" class="reveal-modal small" data-reveal>
+    
+    <%= image_tag ("work-7.jpg") %>
+
+    <h3>Example Title</h3>
+    <p>Macaroon fruitcake marzipan dessert muffin halvah halvah. Cake candy canes apple pie pastry <a href="#">jelly-o caramels</a>. Tiramisu cake lollipop bonbon tart pie caramels biscuit.</p>
+
+    <p class="text-center button-margin"><a href="#" class="button tiny alert radius">Visit Site</a></p>
+
+    <!-- Close modal -->
+    <a class="close-reveal-modal">&times;</a>
+    
+  </div><!-- /.reveal-modal -->
+  <!-- End: Modal Portfolio 1 -->
+
+  <!-- Start: Modal Portfolio 2 -->
+  
+  <!-- End: Modal Portfolio 2 -->

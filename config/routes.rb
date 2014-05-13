@@ -1,9 +1,12 @@
 Portfolio::Application.routes.draw do
-  resources :comments
-
-  devise_for :users
-  resources :posts
-  resources :projects
+  devise_for :users, controllers: {omniauth_callbacks: "omniauth_callbacks"}
+  
+  resources :posts do
+  	resources :comments
+  end
+  resources :projects do
+  	resources :comments
+  end
 
   root 'welcome#index'
 end

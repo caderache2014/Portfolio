@@ -17,6 +17,13 @@ gem "paperclip"
 gem "nested_form"
 gem 'omniauth-twitter'
 gem 'figaro'
+gem 'simple_form'
+gem 'carrierwave'
+gem 'fog'
+gem 'rmagick'
+gem 'mini_magick'
+gem 'mongoid'
+
 group :doc do 
   gem 'sdoc', require: false
 end
